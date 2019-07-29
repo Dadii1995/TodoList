@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Edit /> renders editForm 1`] = `
+<form
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="form-group"
+  >
+    <label
+      className=""
+    >
+      First name
+    </label>
+    <input
+      aria-label="First name"
+      autoComplete="off"
+      className="form-control"
+      data-cy="user-name-input"
+      name="firstName"
+      onBlur={[Function]}
+      onChange={[Function]}
+      type="text"
+      value="NewUser"
+    />
+  </div>
+  <div
+    className="form-group"
+  >
+    <label
+      className=""
+    >
+      Photo url
+    </label>
+    <input
+      aria-label="Photo url"
+      autoComplete="off"
+      className="form-control"
+      data-cy="user-photo-input"
+      name="url"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder="http://examplewebsite.com/img/1.png"
+      type="text"
+      value=""
+    />
+  </div>
+  <div
+    className="form-group"
+  >
+    <label
+      className=""
+    >
+      Birthday
+    </label>
+    <input
+      aria-label="Birthday"
+      autoComplete="off"
+      className="form-control"
+      data-cy="user-birthday-input"
+      name="birthday"
+      onBlur={[Function]}
+      onChange={[Function]}
+      type="date"
+      value="1995-06-23"
+    />
+  </div>
+  <button
+    aria-label={null}
+    className="btn btn-success btn-block"
+    data-cy="submit-button"
+    disabled={false}
+    onClick={[Function]}
+    type="submit"
+  >
+    Save
+  </button>
+</form>
+`;

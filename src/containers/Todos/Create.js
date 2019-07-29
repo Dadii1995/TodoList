@@ -1,26 +1,43 @@
 import React, { useState } from 'react'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
+import { addTodo } from '../../store/todos/actions'
+import { InputGroup, InputGroupAddon, Button, Input } from 'reactstrap'
 
-const Create = props => {
+export const Create = props => {
   const [todoName, setTodoName] = useState('')
-
   return (
-    <div>
-      <input
+    <InputGroup>
+      <Input
+        data-cy="create-todo-input"
         onChange={({ target: { value } }) => {
           setTodoName(value)
         }}
+        placeholder="TODO"
+        type="text"
         value={todoName}
       />
-      <button
-        onClick={() => {
-          setTodoName('')
-          props.onAdd(todoName)
-        }}
-      >
-        Add
-      </button>
-    </div>
+      <InputGroupAddon addonType="prepend">
+        <Button
+          data-cy="create-todo-button"
+          onClick={() => {
+            props.addTodo(todoName)
+            setTodoName('')
+          }}
+        >
+          ADD
+        </Button>
+      </InputGroupAddon>
+    </InputGroup>
   )
 }
-
-export default Create
+const mapDispatchToProps = {
+  addTodo,
+}
+Create.propTypes = {
+  addTodo: PropTypes.func,
+}
+export default connect(
+  null,
+  mapDispatchToProps,
+)(Create)

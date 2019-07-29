@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SelectInput/> renders select with initial value 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    className=""
+  >
+    Select:
+  </label>
+  <select
+    aria-label="Select:"
+    className="form-control"
+    name="selectInput"
+    onBlur={[Function]}
+    onChange={[Function]}
+    value="Val2"
+  >
+    <option
+      value="Val1"
+    >
+      Lab1
+    </option>
+    <option
+      value="Val2"
+    >
+      Lab2
+    </option>
+    <option
+      value="Val3"
+    >
+      Lab3
+    </option>
+    <option
+      value="Val4"
+    >
+      Lab4
+    </option>
+    <option
+      value="Val5"
+    >
+      Lab5
+    </option>
+  </select>
+</div>
+`;
+
+exports[`<SelectInput/> renders select without options 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    className=""
+  >
+    Select:
+  </label>
+  <select
+    aria-label="Select:"
+    className="form-control"
+    name="selectInput"
+    onBlur={[Function]}
+    onChange={[Function]}
+  />
+</div>
+`;
+
+exports[`<SelectInput/> renders select without options 2`] = `
+<div
+  className="form-group"
+>
+  <label
+    className=""
+  >
+    Select:
+  </label>
+  <select
+    aria-label="Select:"
+    className="form-control"
+    name="selectInput"
+    onBlur={[Function]}
+    onChange={[Function]}
+  />
+</div>
+`;

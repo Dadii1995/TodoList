@@ -1,0 +1,120 @@
+$article-border-size: 2px;
+$article-border-color: #282C34;
+$darker-amount: 20%;
+
+.blog {
+  background-color: $color-gray-light;
+  display: flex;
+  flex-direction: column;
+  font-family: $font-family-body;
+  padding: $m-base;
+
+  &__sidebar {
+    margin-bottom: $m-base;
+    @include vertical-spacing();
+  }
+}
+
+.filter-sort-posts {
+  label {
+    width: 100%;
+  }
+}
+
+.filter-sort-posts {
+  background-color: $color-white;
+  padding: $m-base;
+}
+
+.post-list {
+  @include vertical-spacing();
+}
+
+.delete-selected-post {
+  background-color: $brand-danger;
+  border-radius: $border-radius-base;
+  color: $color-white;
+  font-size: $font-size-xl;
+  padding: $m-base;
+  width: 100%;
+
+  &:hover {
+    background-color: darken($brand-danger, $darker-amount);
+  }
+}
+
+.article {
+  //align-self: self-start;
+  background: $color-white;
+  border: $article-border-size solid $color-gray-dark;
+  border-radius: $border-radius-base;
+  color: $color-black;
+  display: flex;
+  flex-direction: column;
+  padding: $m-sm;
+  text-align: center;
+
+  &__title {
+    font-family: $font-family-header;
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+  }
+
+  &__author {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+  }
+
+  &__read-more {
+    background-color: $brand-info;
+    border-radius: $border-radius-sm;
+    color: $color-white;
+    font-weight: $font-weight-bold;
+    padding: $m-sm;
+
+    &:hover {
+      background-color: darken($brand-info, $darker-amount);
+      color: $color-white;
+      text-decoration: none;
+    }
+  }
+
+  &--selected {
+    border-color: $brand-danger;
+  }
+}
+@include media-breakpoint-up(sm) {
+  .blog {
+    flex-direction: row;
+
+    &__sidebar {
+      flex-basis: (100%/3);
+    }
+  }
+
+  .article {
+    align-items: center;
+  }
+
+  .post-list {
+    flex-basis: (100%/3*2);
+    padding-left: $m-base;
+
+  }
+
+}
+@include media-breakpoint-up(lg) {
+  .post-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .article {
+    width: calc(50% - #{$m-base/2});
+
+    &__short-content {
+      flex-grow: 1;
+    }
+  }
+}

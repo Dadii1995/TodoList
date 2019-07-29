@@ -1,9 +1,14 @@
 import React from 'react'
-import Todo from './Todo'
+import { Switch, Route } from 'react-router-dom'
+import List from './List'
+import Details from './Todo/Details'
 
-const Todos = props =>
-  props.todos.map(({ id, name, isDone }) => (
-    <Todo id={id} isDone={isDone} key={id} name={name} setDone={props.setDone} />
-  ))
-
-export default Todos
+export const Todos = () => {
+  return (
+    <Switch>
+      <Route component={Details} path="/todo/:id" />
+      <Route component={List} exact path="/" />
+    </Switch>
+  )
+}
+export default Todos()

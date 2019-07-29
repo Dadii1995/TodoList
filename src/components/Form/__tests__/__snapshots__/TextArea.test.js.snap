@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Textarea/> render textarea with label 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    className=""
+  >
+    Content:
+  </label>
+  <textarea
+    aria-label="Content:"
+    autoComplete="off"
+    className="form-control"
+    name="textArea"
+    onBlur={[Function]}
+    onChange={[Function]}
+  />
+</div>
+`;
+
+exports[`<Textarea/> render textarea with label and initial value 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    className=""
+  >
+    Label
+  </label>
+  <textarea
+    aria-label="Label"
+    autoComplete="off"
+    className="form-control"
+    name="textArea"
+    onBlur={[Function]}
+    onChange={[Function]}
+    value="Initial content"
+  />
+</div>
+`;
+
+exports[`<Textarea/> render textarea with label and placeholder 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    className=""
+  >
+    Label
+  </label>
+  <textarea
+    aria-label="Label"
+    autoComplete="off"
+    className="form-control"
+    name="textArea"
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder="Content:"
+  />
+</div>
+`;
+
+exports[`<Textarea/> render textarea with placeholder 1`] = `
+<div
+  className="form-group"
+>
+  <textarea
+    autoComplete="off"
+    className="form-control"
+    name="textArea"
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder="Content:"
+  />
+</div>
+`;
+
+exports[`<Textarea/> render textarea without label and placeholder 1`] = `
+<div
+  className="form-group"
+>
+  <textarea
+    autoComplete="off"
+    className="form-control"
+    name="textArea"
+    onBlur={[Function]}
+    onChange={[Function]}
+  />
+</div>
+`;

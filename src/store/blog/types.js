@@ -1,0 +1,9 @@
+export const GET_POSTS = 'GET_POSTS'
+export const SELECT_POST = 'SELECT_POST'
+export const DELETE_SELECTED_POSTS = 'DELETE_SELECTED_POSTS'
+export const SET_POSTS_LOADING = 'SET_POSTS_LOADING'
+export const SET_POSTS_ERROR = 'SET_POSTS_ERROR'
+export const ORDER_BY = 'ORDER_BY'
+export const FILTER = 'FILTER'
+
+

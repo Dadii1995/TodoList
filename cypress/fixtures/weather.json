@@ -1,0 +1,16 @@
+{
+  "location":{
+    "name":"Bielsko-Biala",
+    "country":"Poland",
+    "localtime":"2019-07-22 13:30"
+  },
+  "current":{
+    "temp_c":25.0,
+    "temp_f":77.0,
+    "condition":{
+      "icon":"//cdn.apixu.com/weather/64x64/day/113.png"
+    },
+    "pressure_mb":1023.0,
+    "humidity":41
+  }
+}

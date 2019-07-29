@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Checkbox/> render checkbox with initial value 1`] = `
+<div
+  className="form-check"
+>
+  <label
+    className="form-check-label"
+  >
+    <input
+      className="form-check-input"
+      name="testCheckbox"
+      onBlur={[Function]}
+      onChange={[Function]}
+      type="checkbox"
+      value={true}
+    />
+     
+  </label>
+</div>
+`;
+
+exports[`<Checkbox/> render checkbox with label 1`] = `
+<div
+  className="form-check"
+>
+  <label
+    className="form-check-label"
+  >
+    <input
+      className="form-check-input"
+      name="testCheckbox"
+      onBlur={[Function]}
+      onChange={[Function]}
+      type="checkbox"
+    />
+     
+    Accept terms
+  </label>
+</div>
+`;
+
+exports[`<Checkbox/> render checkbox without label 1`] = `
+<div
+  className="form-check"
+>
+  <label
+    className="form-check-label"
+  >
+    <input
+      className="form-check-input"
+      name="testCheckbox"
+      onBlur={[Function]}
+      onChange={[Function]}
+      type="checkbox"
+    />
+     
+  </label>
+</div>
+`;

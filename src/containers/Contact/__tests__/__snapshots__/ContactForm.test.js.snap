@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ContactForm/> renders contact forms 1`] = `
+<form
+  data-testid="test"
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="form-group"
+  >
+    <label
+      className=""
+    >
+      E-Mail
+    </label>
+    <input
+      aria-label="E-Mail"
+      autoComplete="off"
+      className="form-control"
+      name="email"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder="example@domain.com"
+      type="text"
+    />
+  </div>
+  <div
+    className="form-group"
+  >
+    <label
+      className=""
+    >
+      Subject
+    </label>
+    <select
+      aria-label="Subject"
+      className="form-control"
+      name="subject"
+      onBlur={[Function]}
+      onChange={[Function]}
+    >
+      <option
+        value="Technical Problems"
+      >
+        Technical Problems
+      </option>
+      <option
+        value="Orders"
+      >
+        Orders
+      </option>
+      <option
+        value="Other"
+      >
+        Other
+      </option>
+    </select>
+  </div>
+  <div
+    className="form-group"
+  >
+    <label
+      className=""
+    >
+      Content
+    </label>
+    <textarea
+      aria-label="Content"
+      autoComplete="off"
+      className="form-control"
+      name="content"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder="Hi, blablalba"
+    />
+  </div>
+  <div
+    className="form-check"
+  >
+    <label
+      className="form-check-label"
+    >
+      <input
+        className="form-check-input"
+        name="accept"
+        onBlur={[Function]}
+        onChange={[Function]}
+        type="checkbox"
+      />
+       
+      Accept terms
+    </label>
+  </div>
+  <button
+    aria-label={null}
+    className="btn btn-warning"
+    disabled={false}
+    onClick={[Function]}
+    type="submit"
+  >
+    Send
+  </button>
+</form>
+`;

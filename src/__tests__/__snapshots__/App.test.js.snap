@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App/> Render App 1`] = `
+<div
+  className="App"
+>
+  <div
+    data-testId="Navigation"
+  >
+    Navigation
+  </div>
+</div>
+`;

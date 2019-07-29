@@ -1,47 +1,45 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { toggleTodo } from '../../../store/todos/actions'
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+import { Row, Col, Button } from 'reactstrap'
 
-const Todo = ({ id, name, setDone, isDone }) => {
+export const Todo = ({ todo: { id, isDone, name }, toggleTodo = () => {} }) => {
   return (
-    <p className={isDone ? 'todo-done' : 'todo'} onClick={setDone(id)}>
-      {name}
-    </p>
+    <Row>
+      <Col>
+        <span
+          className={isDone ? 'todo-done' : 'todo'}
+          id={id}
+          onClick={() => {
+            toggleTodo(id)
+          }}
+        >
+          {name}
+        </span>
+      </Col>
+      <Col xs="3">
+        <Button block color="info" tag={Link} to={`/todo/${id}`}>
+          Details
+        </Button>
+      </Col>
+    </Row>
   )
-
-  // const divStyle = {
-  //     display: 'inline-block',
-  // }
-  // if (isDone) {
-  //   return (
-  //     <div>
-  //       <div key={id} style={{ display: 'inline-block' }}>
-  //         <strike> {name}</strike>
-  //       </div>
-  //     </div>
-  //   )
-  // } else {
-  //   return (
-  //     <div>
-  //       <div key={id} style={divStyle}>
-  //         {name}
-  //       </div>
-  //       <button
-  //         onClick={() => {
-  //           setDone(id)
-  //         }}
-  //       >
-  //         Done
-  //       </button>
-  //     </div>
-  //   )
-  // }
 }
-
 Todo.propTypes = {
-  id: PropTypes.number.isRequired,
-  name: PropTypes.number.isRequired,
-  isDone: PropTypes.bool,
-  setDone: PropTypes.func,
+  todo: PropTypes.shape({
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    name: PropTypes.string.isRequired,
+    isDone: PropTypes.bool,
+  }).isRequired,
+  toggleTodo: PropTypes.func.isRequired,
 }
 
-export default Todo
+const mapDispatchToProps = {
+  toggleTodo,
+}
+export default connect(
+  null,
+  mapDispatchToProps,
+)(Todo)

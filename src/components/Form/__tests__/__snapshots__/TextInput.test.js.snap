@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextInput/> render text input with label 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    className=""
+  >
+    Content:
+  </label>
+  <input
+    aria-label="Content:"
+    autoComplete="off"
+    className="form-control"
+    name="textInput"
+    onBlur={[Function]}
+    onChange={[Function]}
+    type="text"
+  />
+</div>
+`;
+
+exports[`<TextInput/> render text input with label and placeholder 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    className=""
+  >
+    Label
+  </label>
+  <input
+    aria-label="Label"
+    autoComplete="off"
+    className="form-control"
+    name="textInput"
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder="Content:"
+    type="text"
+  />
+</div>
+`;
+
+exports[`<TextInput/> render text input with placeholder 1`] = `
+<div
+  className="form-group"
+>
+  <input
+    autoComplete="off"
+    className="form-control"
+    name="textInput"
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder="Content:"
+    type="text"
+  />
+</div>
+`;
+
+exports[`<TextInput/> render text input without label and placeholder 1`] = `
+<div
+  className="form-group"
+>
+  <input
+    autoComplete="off"
+    className="form-control"
+    name="textInput"
+    onBlur={[Function]}
+    onChange={[Function]}
+    type="text"
+  />
+</div>
+`;
+
+exports[`<TextInput/> render textarea with label and initial value 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    className=""
+  >
+    Label
+  </label>
+  <input
+    aria-label="Label"
+    autoComplete="off"
+    className="form-control"
+    name="textInput"
+    onBlur={[Function]}
+    onChange={[Function]}
+    type="text"
+  />
+</div>
+`;

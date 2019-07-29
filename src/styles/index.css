@@ -1,0 +1,99 @@
+.blog {
+  background-color: #c2c0bc;
+  display: flex;
+  flex-direction: column;
+  font-family: "Nunito Sans";
+  padding: 20px; }
+  .blog__sidebar {
+    margin-bottom: 20px; }
+    .blog__sidebar > * {
+      margin-bottom: 10px; }
+      .blog__sidebar > *:last-child {
+        margin-bottom: 0; }
+
+.filter-sort-posts label {
+  width: 100%; }
+
+.filter-sort-posts {
+  background-color: #ffffff;
+  padding: 20px; }
+
+.post-list > * {
+  margin-bottom: 10px; }
+  .post-list > *:last-child {
+    margin-bottom: 0; }
+
+.delete-selected-post {
+  background-color: #e62a2a;
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 24px;
+  padding: 20px;
+  width: 100%; }
+  .delete-selected-post:hover {
+    background-color: #981212; }
+
+.article {
+  background: #ffffff;
+  border: 2px solid #66625c;
+  border-radius: 20px;
+  color: #04080c;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  text-align: center; }
+  .article__title {
+    font-family: "Rubik";
+    font-size: 24px;
+    font-weight: 600; }
+  .article__author {
+    font-size: 20px;
+    font-weight: 600; }
+  .article__read-more {
+    background-color: #5bc0de;
+    border-radius: 5px;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 10px; }
+    .article__read-more:hover {
+      background-color: #2390b0;
+      color: #ffffff;
+      text-decoration: none; }
+  .article--selected {
+    border-color: #e62a2a; }
+
+@media (min-width: 576px) {
+  .blog {
+    flex-direction: row; }
+    .blog__sidebar {
+      flex-basis: 33.33333%; }
+  .article {
+    align-items: center; }
+  .post-list {
+    flex-basis: 66.66667%;
+    padding-left: 20px; } }
+
+@media (min-width: 992px) {
+  .post-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; }
+  .article {
+    width: calc(50% - 10px); }
+    .article__short-content {
+      flex-grow: 1; } }
+
+.todo {
+  color: #7F7F7F;
+  cursor: pointer; }
+
+.todo-done {
+  cursor: pointer;
+  text-decoration-line: line-through; }
+
+.active-link {
+  color: #000066;
+  font-weight: bold; }
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
