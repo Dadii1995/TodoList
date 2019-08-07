@@ -8,9 +8,12 @@ class WeatherBox extends Component {
   componentDidMount() {
     this.props.getApiWeather(this.props.weather.city)
   }
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.weather.city !== this.props.weather.city) {
-      this.props.getApiWeather(nextProps.weather.city)
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (
+      prevProps.weather.city !== this.props.weather.city
+    ) {
+      this.props.getApiWeather(this.props.weather.city)
     }
   }
 
@@ -57,14 +60,17 @@ class WeatherBox extends Component {
     }
   }
 }
+
 WeatherBox.propTypes = {
   getApiWeather: PropTypes.func,
   weather: PropTypes.object,
 }
+
 const mapDispatchToProps = { getApiWeather }
 const mapStateToProps = state => ({
   weather: state.weather,
 })
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps,

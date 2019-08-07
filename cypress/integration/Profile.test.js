@@ -2,6 +2,9 @@ describe('Profile', function() {
   before(() => {
     cy.clearLocalStorage('profile')
   })
+  beforeEach(() => {
+    window.localStorage.setItem('isAuth', true)
+  })
   it('Change user data', () => {
     const user = {
       firstName: 'Test User',

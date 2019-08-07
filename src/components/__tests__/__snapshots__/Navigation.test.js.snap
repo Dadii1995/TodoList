@@ -1,143 +1,185 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Navigation/> renders navigation bar 1`] = `
-<div>
-  <nav
-    className="navbar navbar-light bg-light"
-  >
-    <a
-      className="navbar-brand"
-      href="/"
+Array [
+  <div>
+    <nav
+      className="navbar navbar-expand-md"
+      style={
+        Object {
+          "background": "#8db9c4",
+        }
+      }
     >
-      reactstrap
-    </a>
-    <ul
-      className="nav"
-    >
-      <li
-        className="nav-item"
+      <a
+        className="navbar-brand"
+        href="/"
       >
-        <a
-          aria-current="page"
-          className="nav-link active-link"
-          href="/"
-          onClick={[Function]}
-          style={Object {}}
-        >
-          Home
-        </a>
-      </li>
-      <li
-        className="dropdown nav-item"
-        onKeyDown={[Function]}
+        Todo list
+      </a>
+      <button
+        className="navbar-toggler"
+        onClick={[Function]}
+        type="button"
       >
-        <a
-          aria-expanded={false}
-          aria-haspopup={true}
-          className="dropdown-toggle nav-link"
-          href="#"
-          onClick={[Function]}
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
+      <div
+        className="collapse navbar-collapse"
+        style={Object {}}
+      >
+        <ul
+          className="ml-auto navbar-nav"
         >
-          Profile
-        </a>
-        <div
-          aria-hidden={true}
-          className="dropdown-menu dropdown-menu-right"
-          role="menu"
-          tabIndex="-1"
-        >
-          <button
-            className="dropdown-item"
-            onClick={[Function]}
-            role="menuitem"
-            tabIndex="0"
-            type="button"
+          <li
+            className="nav-item"
+          >
+            <a
+              aria-current="page"
+              className="nav-link active-link"
+              data-cy="nav-home"
+              href="/"
+              onClick={[Function]}
+              style={Object {}}
+            >
+              Home
+            </a>
+          </li>
+          <li
+            className="active dropdown nav-item"
+            onKeyDown={[Function]}
+          >
+            <a
+              aria-expanded={false}
+              aria-haspopup={true}
+              className="dropdown-toggle nav-link"
+              data-cy="nav-profile"
+              href="#"
+              onClick={[Function]}
+            >
+              Profile
+            </a>
+            <div
+              aria-hidden={true}
+              className="dropdown-menu dropdown-menu-right"
+              role="menu"
+              tabIndex="-1"
+            >
+              <button
+                className="dropdown-item"
+                onClick={[Function]}
+                role="menuitem"
+                tabIndex="0"
+                type="button"
+              >
+                <a
+                  aria-current={null}
+                  className="nav-link"
+                  data-cy="nav-profile-details"
+                  href="/profile"
+                  onClick={[Function]}
+                >
+                  Details
+                </a>
+              </button>
+              <button
+                className="dropdown-item"
+                onClick={[Function]}
+                role="menuitem"
+                tabIndex="0"
+                type="button"
+              >
+                <a
+                  aria-current={null}
+                  className="nav-link"
+                  data-cy="nav-profile-edit"
+                  href="/profile/edit"
+                  onClick={[Function]}
+                >
+                  Edit
+                </a>
+              </button>
+              <div
+                className="dropdown-divider"
+                onClick={[Function]}
+                tabIndex="-1"
+              />
+              <button
+                className="dropdown-item"
+                onClick={[Function]}
+                role="menuitem"
+                tabIndex="0"
+                type="button"
+              >
+                <a
+                  aria-current={null}
+                  className="nav-link"
+                  data-cy="nav-profile-change-password"
+                  href="/profile/changepassword"
+                  onClick={[Function]}
+                >
+                  Change Password
+                </a>
+              </button>
+            </div>
+          </li>
+          <li
+            className="nav-item"
           >
             <a
               aria-current={null}
               className="nav-link"
-              href="/profile"
+              data-cy="nav-blog"
+              href="/blog"
               onClick={[Function]}
             >
-              Details
+              Blog
             </a>
-          </button>
-          <button
-            className="dropdown-item"
-            onClick={[Function]}
-            role="menuitem"
-            tabIndex="0"
-            type="button"
+          </li>
+          <li
+            className="nav-item"
           >
             <a
               aria-current={null}
               className="nav-link"
-              href="/profile/edit"
+              data-cy="nav-weather"
+              href="/weather"
               onClick={[Function]}
             >
-              Edit
+              Weather
             </a>
-          </button>
-          <div
-            className="dropdown-divider"
-            onClick={[Function]}
-            tabIndex="-1"
-          />
-          <button
-            className="dropdown-item"
-            onClick={[Function]}
-            role="menuitem"
-            tabIndex="0"
-            type="button"
+          </li>
+          <li
+            className="nav-item"
           >
             <a
               aria-current={null}
               className="nav-link"
-              href="/profile/changepassword"
+              data-cy="nav-contact"
+              href="/contact"
               onClick={[Function]}
             >
-              Change Password
+              Contact
             </a>
-          </button>
-        </div>
-      </li>
-      <li
-        className="nav-item"
-      >
-        <a
-          aria-current={null}
-          className="nav-link"
-          href="/blog"
-          onClick={[Function]}
-        >
-          Blog
-        </a>
-      </li>
-      <li
-        className="nav-item"
-      >
-        <a
-          aria-current={null}
-          className="nav-link"
-          href="/weather"
-          onClick={[Function]}
-        >
-          Weather
-        </a>
-      </li>
-      <li
-        className="nav-item"
-      >
-        <a
-          aria-current={null}
-          className="nav-link"
-          href="/contact"
-          onClick={[Function]}
-        >
-          Contact
-        </a>
-      </li>
-    </ul>
-  </nav>
-</div>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              aria-current={null}
+              className="nav-link"
+              href="/login"
+              onClick={[Function]}
+            >
+              Log in
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>,
+  ",",
+]
 `;

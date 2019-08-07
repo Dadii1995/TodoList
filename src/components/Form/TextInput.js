@@ -6,6 +6,7 @@ const TextInput = ({ field: { name, ...field }, form: { touched, errors }, ...pr
     {props.label && <Label>{props.label}</Label>}
     <Input
       autoComplete="off"
+      innerRef={props.innerRef}
       type="text"
       {...field}
       aria-label={props.label}

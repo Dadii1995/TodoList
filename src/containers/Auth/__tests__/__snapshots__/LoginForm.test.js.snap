@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LoginForm/> should render login form 1`] = `
+<button
+  aria-label={null}
+  className="btn btn-secondary"
+  data-cy="login-button"
+  onClick={[Function]}
+  type="button"
+>
+  Log in
+</button>
+`;

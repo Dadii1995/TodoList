@@ -15,14 +15,14 @@ describe('Blog reducer', () => {
     const posts = [
       {
         userId: 1,
-        id: 1,
+        id: 15,
         title: 'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',
         body:
           'quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto',
       },
       {
         userId: 1,
-        id: 2,
+        id: 16,
         title: 'qui est esse',
         body:
           'est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla',
@@ -33,7 +33,7 @@ describe('Blog reducer', () => {
         type: GET_POSTS,
         payload: posts,
       }),
-    ).toStrictEqual({ ...initialState, posts })
+    ).toStrictEqual({ ...initialState, posts, filteredPosts: posts })
   })
   test('should set loading on true', () => {
     expect(
@@ -77,12 +77,19 @@ describe('Blog reducer', () => {
         type: SELECT_POST,
         payload: postId,
       }),
-    ).toStrictEqual({ ...initialState, selectedPosts: [] })
+    ).toStrictEqual({
+      ...initialState,
+      selectedPosts: initialState.selectedPosts.filter(post => post !== postId),
+    })
   })
   test('should delete selected posts', () => {
     expect(reducer(initialState, { type: DELETE_SELECTED_POSTS })).toStrictEqual({
       ...initialState,
       posts: initialState.posts.filter(post => !initialState.selectedPosts.includes(post.id)),
+      filteredPosts: initialState.posts.filter(
+        post => !initialState.selectedPosts.includes(post.id),
+      ),
+      selectedPosts: [],
     })
   })
 })

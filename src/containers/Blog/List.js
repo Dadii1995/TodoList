@@ -10,17 +10,15 @@ class List extends Component {
   componentDidMount() {
     this.props.getApiPosts()
   }
-  //todo: search
-
   render() {
-    const { posts, error, isLoading, selectedPosts, checkPost } = this.props
+    const { posts, error, isLoading, selectedPosts, checkPost, searchQuery } = this.props
     const SelectArticle = id => event => {
       checkPost(id)
     }
     return (
       <div className="blog">
         <Sidebar />
-        <div className="post-list">
+        <div className="post-list" data-cy="posts-list">
           {isLoading ? (
             <div>
               <Spinner color="primary" type="grow" />
@@ -36,16 +34,16 @@ class List extends Component {
                   id: article.id,
                   author: article.userId,
                   title: article.title,
-                  shortBody:
-                    article.body.length < 50 ? article.body : `${article.body.slice(0, 50)}...`,
+                  body: article.body,
                 }}
                 isSelected={selectedPosts.includes(article.id)}
                 key={article.id}
+                searchQuery={searchQuery}
                 select={SelectArticle(article.id)}
               />
             ))
           ) : (
-            <h1>No results</h1>
+            <h1 data-cy="no-results-header">No results</h1>
           )}
         </div>
       </div>

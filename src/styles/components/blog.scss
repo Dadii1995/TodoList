@@ -43,6 +43,10 @@ $darker-amount: 20%;
   }
 }
 
+.search-highlight {
+  background-color: $brand-warning;
+}
+
 .article {
   //align-self: self-start;
   background: $color-white;

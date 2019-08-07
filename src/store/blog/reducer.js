@@ -147,6 +147,7 @@ export const blog = (state = initialState, { type, payload }) => {
         ...state,
         filter: payload,
         filteredPosts: sortingAndFilteringPosts(state.posts, state.orderBy, payload),
+        selectedPosts: [],
       }
     default:
       return state

@@ -19,5 +19,9 @@ const sortPosts = (posts, sortBy) => {
   }
 }
 const filterPosts = (posts, searchQuery) => {
-  return posts.filter(post => post.title.includes(searchQuery) || post.body.includes(searchQuery))
+  return posts.filter(
+    post =>
+      post.title.toUpperCase().includes(searchQuery.toUpperCase()) ||
+      post.body.toUpperCase().includes(searchQuery.toUpperCase()),
+  )
 }

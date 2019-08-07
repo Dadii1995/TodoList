@@ -33,6 +33,9 @@
   .delete-selected-post:hover {
     background-color: #981212; }
 
+.search-highlight {
+  background-color: #ffd200; }
+
 .article {
   background: #ffffff;
   border: 2px solid #66625c;

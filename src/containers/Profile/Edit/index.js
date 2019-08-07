@@ -5,14 +5,14 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
 const Edit = props => {
-  const SaveProfile = (values, { setSubmitting }) => {
+  const saveProfile = (values, { setSubmitting }) => {
     setTimeout(() => {
       props.editProfile(values)
       props.history.push('/profile')
       setSubmitting(false)
     }, 500)
   }
-  return <EditForm saveProfile={SaveProfile} />
+  return <EditForm saveProfile={saveProfile} />
 }
 const mapDispatchToProps = {
   editProfile,

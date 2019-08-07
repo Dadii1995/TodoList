@@ -10,6 +10,7 @@ jest.mock('../containers/Todos', () => () => <div data-testId="Todos">Todos</div
 jest.mock('../containers/Blog', () => () => <div data-testId="Blog">Blog</div>)
 jest.mock('../containers/Contact', () => () => <div data-testId="Contact">Contact</div>)
 jest.mock('../containers/Weather', () => () => <div data-testId="Weather">Weather</div>)
+jest.mock('../components/Navigation', () => () => <div data-testId="Navigation">Navigation</div>)
 
 const getWrapper = () => {
   const mockStore = configureStore()

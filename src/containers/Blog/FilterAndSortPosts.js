@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { filterPosts, OrderTypes } from '../../store/blog/actions'
 import { Field, Form, Formik } from 'formik'
 import SelectInput from '../../components/Form/SelectInput'
-import { Alert, Button, FormGroup, Label, Input } from 'reactstrap'
+import { Alert, Button, FormGroup, Label, Input, Spinner } from 'reactstrap'
 import { connect } from 'react-redux'
 import debounce from 'lodash/debounce'
 
@@ -15,10 +15,14 @@ export const options = [
 ]
 
 const FilterAndSort = props => {
+  const [isLoading, setLoading] = useState(false)
+
   const testOnce = debounce(searchQuery => {
     props.filterPosts(searchQuery)
+    setLoading(false)
   }, 500)
   const debounceFilter = ({ target: { value } }) => {
+    setLoading(true)
     testOnce(value)
   }
 
@@ -27,8 +31,14 @@ const FilterAndSort = props => {
       <FormGroup>
         <Label>
           Search
-          <Input name="email" onChange={debounceFilter} placeholder="search" />
+          <Input
+            data-cy="search-posts-input"
+            name="email"
+            onChange={debounceFilter}
+            placeholder="search"
+          />
         </Label>
+        {isLoading && <Spinner color="info" />}
       </FormGroup>
       <Formik initialValues={{ orderBy: props.orderBy }} onSubmit={props.sortPosts}>
         {({ isSubmitting, errors }) => {

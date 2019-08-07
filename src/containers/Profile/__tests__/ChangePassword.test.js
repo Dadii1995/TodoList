@@ -8,6 +8,14 @@ import { initialState } from '../../../store/profile/reducer'
 import { CHANGE_PASSWORD } from '../../../store/profile/types'
 import sleep from '../../../utils/sleep'
 
+const createNodeMock = () => {
+  const focus = () => console.log('Focused')
+  return {
+    focus,
+  }
+}
+
+
 const getWrapper = initialStore => {
   const mockStore = configureStore()
   const store = mockStore(initialStore)
@@ -15,6 +23,7 @@ const getWrapper = initialStore => {
     <Provider store={store}>
       <ChangePassword />
     </Provider>,
+    { createNodeMock },
   )
   const root = wrapper.root
 

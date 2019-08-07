@@ -17,11 +17,9 @@ const getWrapper = initialStore => {
     </Provider>,
   )
   const root = wrapper.root
-
   return { wrapper, root, store }
 }
 describe('<Weather/>', () => {
-
   test('renders row with 2 cols', () => {
     const { root } = getWrapper()
     const row = root.findByType(Row)

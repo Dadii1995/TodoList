@@ -13,10 +13,10 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
+  Button,
 } from 'reactstrap'
 import withTheme from '../../hocs/withTheme'
 import withAuth from '../../hocs/withAuth'
-import Button from 'reactstrap/es/Button'
 
 class Navigation extends Component {
   constructor(props) {

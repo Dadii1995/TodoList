@@ -2,6 +2,9 @@ import { options } from '../../src/containers/Weather/CityPicker'
 import sample from 'lodash/sample'
 
 describe('Weather', function() {
+  beforeEach(() => {
+    window.localStorage.setItem('isAuth', true)
+  })
   it('Set city weather', () => {
     const selectedCity = sample(options).label
     cy.visit('/weather')

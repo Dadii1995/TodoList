@@ -1,31 +1,48 @@
-import React, { useState } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { InputGroup, InputGroupAddon, Button, Input } from 'reactstrap'
 
 import { changePassword } from '../../store/profile/actions'
 import PropTypes from 'prop-types'
 
-const ChangePassword = props => {
-  const [password, changePassword] = useState(props.password)
-  return (
-    <div>
-      <input
-        onChange={({ target: { value } }) => {
-          changePassword(value)
-        }}
-        placeholder="Change Password"
-        type="text"
-        value={password}
-      />
-      <button
-        onClick={() => {
-          props.changePassword(password)
-        }}
-      >
-        Save
-      </button>
-    </div>
-  )
+class ChangePassword extends Component {
+  constructor(props) {
+    super(props)
+    this.state = { password: props.password }
+    this.passwordInput = React.createRef()
+  }
+  componentDidMount() {
+    this.passwordInput.current.focus()
+  }
+
+  render() {
+    return (
+      <InputGroup>
+        <Input
+          data-cy="password-input"
+          onChange={({ target: { value } }) => {
+            this.setState(state => ({ password: value }))
+          }}
+          placeholder="Change Password"
+          innerRef={this.passwordInput}
+          type="text"
+          value={this.state.password}
+        />
+        <InputGroupAddon addonType="prepend">
+          <Button
+            data-cy="save-password-button"
+            onClick={() => {
+              this.props.changePassword(this.state.password)
+            }}
+          >
+            Save
+          </Button>
+        </InputGroupAddon>
+      </InputGroup>
+    )
+  }
 }
+
 const mapDispatchToProps = {
   changePassword,
 }

@@ -1,6 +1,5 @@
 import renderer from 'react-test-renderer'
 import { BrowserRouter as Router } from 'react-router-dom'
-import { Card, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap'
 
 import React from 'react'
 import Article from '../Article'
@@ -8,7 +7,7 @@ import Article from '../Article'
 const getWrapper = initialState => {
   const wrapper = renderer.create(
     <Router>
-      <Article article={initialState} />
+      <Article article={initialState} isSelected={false} searchQuery="" />
     </Router>,
   )
   const root = wrapper.root
@@ -21,27 +20,26 @@ describe('<Article/>', () => {
       id: 1,
       author: 1,
       title: 'Title',
-      shortBody: 'Article body',
+      body: 'Article body',
     }
 
     const { root } = getWrapper(initialState)
-
-    const articleCointainer = root.findByType(Card)
+    const articleCointainer = root.findByProps({ className: 'article' })
     expect(articleCointainer).toBeDefined()
 
-    const title = articleCointainer.findByType(CardTitle)
+    const title = articleCointainer.findByProps({ className: 'article__title' })
     expect(title).toBeDefined()
     expect(title.props.children).toContain(initialState.title)
 
-    const author = articleCointainer.findByType(CardSubtitle)
+    const author = articleCointainer.findByProps({ className: 'article__author' })
     expect(author).toBeDefined()
     expect(author.props.children).toEqual(initialState.author)
 
-    const shortBody = articleCointainer.findByType(CardText)
-    expect(shortBody).toBeDefined()
-    expect(shortBody.props.children).toContain(initialState.shortBody)
+    const body = articleCointainer.findByProps({ className: 'article__short-content' })
+    expect(body).toBeDefined()
+    expect(body.props.children).toContain(initialState.body)
 
-    const readMore = articleCointainer.findByType(Button)
+    const readMore = articleCointainer.findByProps({ className: 'article__read-more' })
     expect(readMore).toBeDefined()
     expect(readMore.props.to).toBe(`/blog/${initialState.id}`)
   })

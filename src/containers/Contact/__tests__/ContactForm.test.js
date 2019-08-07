@@ -8,8 +8,15 @@ import SelectInput from '../../../components/Form/SelectInput'
 import TextArea from '../../../components/Form/TextArea'
 import CheckBox from '../../../components/Form/CheckBox'
 
+const createNodeMock = () => {
+  const focus = () => console.log('Focused')
+  return {
+    focus,
+  }
+}
+
 const getWrapper = () => {
-  const wrapper = renderer.create(<ContactForm />)
+  const wrapper = renderer.create(<ContactForm />, {createNodeMock})
   const root = wrapper.root
   return { root, wrapper }
 }

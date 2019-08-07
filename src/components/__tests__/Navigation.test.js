@@ -3,12 +3,15 @@ import renderer from 'react-test-renderer'
 import { BrowserRouter as Router } from 'react-router-dom'
 
 import Navigation from '../Navigation'
+import ThemeProvider from '../../contexts/Theme'
 
 const getWrapper = () => {
   const wrapper = renderer.create(
-    <Router>
-      <Navigation />
-    </Router>,
+    <ThemeProvider>
+      <Router>
+        <Navigation />
+      </Router>,
+    </ThemeProvider>,
   )
   const root = wrapper.root
   return { root, wrapper }

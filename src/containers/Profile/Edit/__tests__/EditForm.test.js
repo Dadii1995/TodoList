@@ -26,9 +26,13 @@ const getWrapper = () => {
 }
 
 describe('<EditForm/>', () => {
-  afterEach(cleanup)
+  afterEach(() => {
+    cleanup()
+    jest.clearAllMocks()
+  })
 
   test('Submit form after change', async () => {
+    expect.assertions(1)
     const { getByText, getByLabelText } = getWrapper()
     const userName = getByLabelText('First name')
     fireEvent.change(userName, { target: { value: 'User212121' } })
@@ -46,12 +50,13 @@ describe('<EditForm/>', () => {
       expect(initialState.onSubmit).toHaveBeenCalled()
     })
   })
+
   test('not submit - invalid url', async () => {
     const { getByText, getByLabelText } = getWrapper()
 
     const photoUrl = getByLabelText('Photo url')
     fireEvent.change(photoUrl, {
-      target: { value: 'invalidURL' },
+      target: { value: 'aaaaa' },
     })
 
     const button = getByText('Save')

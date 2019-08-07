@@ -3,6 +3,7 @@ import head from 'lodash/head'
 describe('TodoList', function() {
   beforeEach(() => {
     cy.clearLocalStorage('todos')
+    window.localStorage.setItem('isAuth', true)
   })
   it('Add todo', function() {
     cy.visit('/')

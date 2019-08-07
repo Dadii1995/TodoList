@@ -1,9 +1,8 @@
 import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { Row, Col } from 'reactstrap'
+import { Row, Col,Button } from 'reactstrap'
 import ThemeSelector from './ThemeSelector'
-import Button from 'reactstrap/es/Button'
 import { ThemeContext } from '../../contexts/Theme'
 
 const Details = ({ profile }) => {

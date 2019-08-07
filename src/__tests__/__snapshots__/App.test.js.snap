@@ -9,5 +9,14 @@ exports[`<App/> Render App 1`] = `
   >
     Navigation
   </div>
+  <button
+    aria-label={null}
+    className="btn btn-secondary"
+    data-cy="login-button"
+    onClick={[Function]}
+    type="button"
+  >
+    Log in
+  </button>
 </div>
 `;
